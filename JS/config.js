@@ -1,4 +1,4 @@
-// Import initializeApp from firebase/app
+/*// Import initializeApp from firebase/app
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -18,4 +18,4 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);*/

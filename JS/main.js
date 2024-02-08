@@ -1,4 +1,4 @@
-// Import the functions you need from the SDKs you need
+/*// Import the functions you need from the SDKs you need
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js";
 //get data from firebase
 import { getDatabase, ref, child, get, onValue, push, update, remove, set} 
@@ -139,4 +139,4 @@ function loginUser(email,password){
         const errorMessage = error.message;
         console.log(`ErrorCode: ${errorCode} -> Message: ${errorMessage}`);
     });
-}
+}*/

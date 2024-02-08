@@ -4,13 +4,13 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>River Safari - A Page</title>
+        <title>River Safari - Contact Page</title>
       
         <!------- favicon ------->
         <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
       
         <!------- CSS ------->
-        <link rel="stylesheet" href="/CSS/about.css">
+        <link rel="stylesheet" href="/CSS/contact.css">
       
         <!------- google font ------->
         <link rel="preconnect" href="https://fonts.googleapis.com">    
@@ -22,6 +22,9 @@
       
         <!------- Swiper ------->
         <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+        <!------- MapBox ------->
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet">
       
       </head>
 <body>
@@ -69,6 +72,11 @@
             <form id="SignOutForm">
                 <button class="btn btn-primary" type="submit" id="submit">Sign Out</button>
             </form>
+            
+
+          <!--<button class="search-btn" aria-label="Search">
+            <ion-icon name="search"></ion-icon>
+          </button>-->
 
           <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
             <ion-icon name="menu-outline"></ion-icon>
@@ -109,7 +117,7 @@
           <div class="navbar-top">
 
             <a href="#" class="logo">
-              <img src="/images/River_Safari_Logo.png" alt="tourly logo">
+              <img src="./assets/images/logo-blue.svg" alt="Tourly logo">
             </a>
 
             <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
@@ -147,131 +155,123 @@
 
   </header>
 
-<main>
+<section class="contact">
+  
+</section>
+<section class="title">
+  <h1>Contact</h1>
+</section>
 
-  <!------- Download ------->
-  <section id="reviews" class="hero">
-    <div class="reviews-box">
-      <div class="box-top">
+<div class="contact">
 
-          <div class="profile">
-              <div class="profile-img">
-                  <img src="images/elephant.jpg" alt="">
-              </div>
+  <form action="">
+      <h3>get in touch</h3>
+      <span>your name</span>
+      <input type="text" class="box">
+      <span>your number</span>
+      <input type="number" class="box">
+      <span>your email</span>
+      <input type="email" class="box">
+      <span>your message</span>
+      <textarea class="box" name="" id="" cols="30" rows="10"></textarea>
+      <input type="submit" value="send message" class="button">
+  </form>
+  
 
-              <div class="name-user">
-                  <strong id="username"> Puzzle Safari</strong>
-              </div>
-          </div>
-
-      </div>
-
-      <div class="comments">
-          <p id="message">Embark on a captivating adventure through the vibrant and lush landscapes of the Singapore River Safari in 'Puzzle Safari', a thrilling puzzle game that combines the excitement of exploration with the challenge of mind-bending puzzles.</p>
-      </div>
-      <br>
-      <button class="btn btn-primary">Download</button>
-  </div>
-  </section>
-</main>
-    
+</div>
 
 <!------- Footer ------->
 
-  <footer class="footer">
+<footer class="footer">
 
-    <div class="footer-top">
-      <div class="container">
+  <div class="footer-top">
+    <div class="container">
 
-        <div class="footer-brand">
+      <div class="footer-brand">
 
-            <a href="#" class="logo">
-                <img src="images/River_Safari_Logo.png" alt="">
-              </a>
-
-        </div>
-
-        <div class="footer-contact">
-
-          <h4 class="contact-title">Contact Us</h4>
-
-          <p class="contact-text">
-            Feel free to contact and reach us !!
-          </p>
-
-          <ul>
-
-            <li class="contact-item">
-              <ion-icon name="call-outline"></ion-icon>
-
-              <a href="tel:+01123456790" class="contact-link">+65 9912 6295</a>
-            </li>
-
-            <li class="contact-item">
-              <ion-icon name="mail-outline"></ion-icon>
-
-              <a href="mailto:info.tourly.com" class="contact-link">RiverSafari_Mandai@gmail.com</a>
-            </li>
-
-            <li class="contact-item">
-              <ion-icon name="location-outline"></ion-icon>
-
-              <address>80 Mandai Lake Rd, Singapore 729826</address>
-            </li>
-
-          </ul>
-
-        </div>
-
-        <div class="footer-form">
-
-          <p class="form-text">
-            Subscribe our newsletter for more update & news !!
-          </p>
-
-          <form action="" class="form-wrapper">
-            <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
-
-            <button type="submit" class="btn btn-secondary">Subscribe</button>
-          </form>
-
-        </div>
+          <a href="#" class="logo">
+              <img src="images/River_Safari_Logo.png" alt="">
+            </a>
 
       </div>
-    </div>
 
-    <div class="footer-bottom">
-      <div class="container">
+      <div class="footer-contact">
 
-        <p class="copyright">
-          &copy; 2024 <a href="">River Safari</a>. All rights reserved
+        <h4 class="contact-title">Contact Us</h4>
+
+        <p class="contact-text">
+          Feel free to contact and reach us !!
         </p>
 
-        <ul class="footer-bottom-list">
+        <ul>
 
-          <li>
-            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          <li class="contact-item">
+            <ion-icon name="call-outline"></ion-icon>
+
+            <a href="tel:+01123456790" class="contact-link">+65 9912 6295</a>
           </li>
 
-          <li>
-            <a href="#" class="footer-bottom-link">Term & Condition</a>
+          <li class="contact-item">
+            <ion-icon name="mail-outline"></ion-icon>
+
+            <a href="mailto:info.tourly.com" class="contact-link">RiverSafari_Mandai@gmail.com</a>
           </li>
 
-          <li>
-            <a href="#" class="footer-bottom-link">FAQ</a>
+          <li class="contact-item">
+            <ion-icon name="location-outline"></ion-icon>
+
+            <address>80 Mandai Lake Rd, Singapore 729826</address>
           </li>
 
         </ul>
 
       </div>
+
+      <div class="footer-form">
+
+        <p class="form-text">
+          Subscribe our newsletter for more update & news !!
+        </p>
+
+        <form action="" class="form-wrapper">
+          <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
+
+          <button type="submit" class="btn btn-secondary">Subscribe</button>
+        </form>
+
+      </div>
+
     </div>
+  </div>
 
-  </footer>
+  <div class="footer-bottom">
+    <div class="container">
 
+      <p class="copyright">
+        &copy; 2024 <a href="">River Safari</a>. All rights reserved
+      </p>
 
-  <a href="#top" class="go-top" data-go-top>
-    <ion-icon name="chevron-up-outline"></ion-icon>
-  </a>
+      <ul class="footer-bottom-list">
+
+        <li>
+          <a href="#" class="footer-bottom-link">Privacy Policy</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-bottom-link">Term & Condition</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-bottom-link">FAQ</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+
+</footer>
+
 
       <!-- JS script -->
   <script type="module">
@@ -346,6 +346,9 @@ SignOutForm.addEventListener('submit',SignOutUser);
   <!------- ionicon link ------->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!------- MapBox API ------->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
 
 </body>
 </html>

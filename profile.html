@@ -1,11 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>River Safari - About Page</title>
+      
+        <!------- favicon ------->
+        <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+      
+        <!------- CSS ------->
+        <link rel="stylesheet" href="/CSS/profile.css">
+      
+        <!------- google font ------->
+        <link rel="preconnect" href="https://fonts.googleapis.com">    
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+      
+        <!------- font awesome ------->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      
+        <!------- Swiper ------->
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+      
+      </head>
 <body>
     
+    <!------- header ------->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <a href="" class="helpline-box">
+
+          <div class="icon-box">
+            <ion-icon name="call-outline"></ion-icon>
+          </div>
+
+          <div class="wrapper">
+            <p class="helpline-title">For Further Inquires :</p>
+
+            <p class="helpline-number">+65 9912 6295</p>
+          </div>
+
+        </a>
+
+        <a href="#" class="logo">
+          <img src="images/River_Safari_Logo.png" alt="Tourly logo">
+        </a>
+
+        <div class="header-btn-group">
+
+            <div class="icons" id="ProfilePage">
+              <a href="profile.html">
+                  <div id="login-btn" class="fas fa-user"> </div>
+              </a>
+            </div>
+            
+            <form id="SignOutForm">
+                <button class="btn btn-primary" type="submit" id="submit">Sign Out</button>
+            </form>
+            
+          <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="#" class="logo">
+              <img src="./assets/images/logo-blue.svg" alt="Tourly logo">
+            </a>
+
+            <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <ul class="navbar-list">
+
+            <li>
+              <a href="index.html" class="navbar-link" data-nav-link>home</a>
+            </li>
+
+            <li>
+              <a href="about.html" class="navbar-link" data-nav-link>About</a>
+            </li>
+
+            <li>
+              <a href="message.html" class="navbar-link" data-nav-link>Reviews</a>
+            </li>
+
+            <li>
+              <a href="contact.html" class="navbar-link" data-nav-link>contact us</a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+        <button class="btn btn-primary">Play Now</button>
+
+      </div>
+    </div>
+
+  </header>
+
+  <div class="wrapper">
+    <div class="left">
+        <img src="images/blank pfp.png" alt="user" width="100">
+        <h4 id="display-user"></h4>
+        <p>User</p>
+    </div>
+    <div class="right">
+        <div class="info">
+            <h3>User Info</h3>
+            <div class="info_data">
+                <div class="data">
+                    <h4>Email</h4>
+                    <p id="display-email"></p>
+                </div>
+                <div class="data">   
+                    <h4>Password</h4>
+                    <p id="display-pass"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="projects">
+            <h3>Game Data</h3>
+            <div class="projects_data">
+                <div class="data">
+                    <h4>Checkpoints</h4>
+                    <p id="fish-checkpoint"></p>
+                    <p id="panda-checkpoint"></p>
+                </div>
+                <div class="data">   
+                    <h4>User Status</h4>
+                    <p id="userstatus"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+      <!-- JS script -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+    import { getDatabase, ref, child, get, set, update, push, remove} from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js"; 
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrYQznihZcvbFGfk2AMnTulGoKy88cIrs",
+      authDomain: "ip-prj-6045c.firebaseapp.com",
+      databaseURL: "https://ip-prj-6045c-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "ip-prj-6045c",
+      storageBucket: "ip-prj-6045c.appspot.com",
+      messagingSenderId: "566313789098",
+      appId: "1:566313789098:web:d6f7ae88365162321fd2d3",
+      measurementId: "G-7VFQVD0EWV"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const dbref = ref(db);
+    const auth = getAuth(app);
+
+    let EmailInpt = document.getElementById('email');
+    let PassInpt = document.getElementById('password');
+
+    
+
+/*-------- Sign Out User --------*/
+let SignOutUser = evt => {
+    evt.preventDefault();
+
+    signOut(auth)
+    .then(()=>{
+      console.log("the user has signed out")
+      window.location.href = 'index.html'
+    })
+    .catch((err)=>{
+      console.log(err.message)
+    })
+  }
+
+/*------- Change of State -------*/
+    onAuthStateChanged(auth,(user)=>{
+        if(user){
+          document.getElementById('SignOutForm').style.display = 'block';
+          document.getElementById('ProfilePage').style.display = 'block';
+        }
+        else{
+          document.getElementById('SignOutForm').style.display = 'none';
+          document.getElementById('ProfilePage').style.display = 'none';
+        }
+    })
+
+//MainForm.addEventListener('submit',SignInUser);
+SignOutForm.addEventListener('submit',SignOutUser);
+
+/*------- Display Data -------*/
+let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+let GameData = JSON.parse(sessionStorage.getItem("game-data"));
+
+let Email = document.getElementById('display-email');
+let Username = document.getElementById('display-user');
+let Password = document.getElementById('display-pass');
+let Fish = document.getElementById('fish-checkpoint');
+let Panda = document.getElementById('panda-checkpoint');
+let UserStatus = document.getElementById('userstatus');
+
+Email.innerText = `${UserInfo.Email}`;
+Username.innerText = `${UserInfo.Username}`;
+Password.innerText = `${UserInfo.Password}`;
+
+if(`${GameData.Fish}`.toString() == 'true'){
+  Fish.innerText = 'Fish: Completed';
+}
+else{
+  Fish.innerText = 'Fish: Not Completed';
+}
+
+if(`${GameData.Panda}`.toString() == 'true'){
+  Panda.innerText = 'Panda: Completed';
+}
+else{
+  Panda.innerText = 'Panda: Not Completed';
+}
+
+if(`${UserInfo.UserStatus}`.toString() == 'true'){
+  UserStatus.innerText = 'Online';
+}
+else{
+  UserStatus.innerText = 'Offline';
+}
+
+  </script>
+
+
+  <!------- JS ------->
+  <script src="/JS/script.js"></script>
+
+  <!------- ionicon link ------->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>
